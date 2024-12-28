@@ -1,0 +1,17 @@
+package com.app.chat.controller;
+
+import com.app.chat.model.ChatMessage;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ChatController {
+
+    //this controller will handle the messages and broadcast it
+    @MessageMapping("/sendMessage")
+    @SendTo("")
+    public ChatMessage sendMessage(ChatMessage message) {
+        return message;
+    }
+}
